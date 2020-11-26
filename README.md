@@ -6,6 +6,7 @@ Built with:
 - Node.js
 - React.js
 - MongoDB
+- Mongoose
 - Express
 
 ## Creator
