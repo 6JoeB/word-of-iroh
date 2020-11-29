@@ -103,9 +103,9 @@ const ProfileScheme = new mongoose.Schema({
 		},
 	},
 	date: {
-		type: date,
+		type: Date,
 		default: Date.now,
 	},
 });
 
-module.exports = Profile = mongoose.model("profile", PrfileSchema);
+module.exports = Profile = mongoose.model("profile", ProfileScheme);
