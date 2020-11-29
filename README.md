@@ -1,6 +1,6 @@
 # word-of-iroh
 
-Philosphy forum web app built using the MERN stack
+Forum web app built using the MERN stack
 
 ## Tech stack
 
