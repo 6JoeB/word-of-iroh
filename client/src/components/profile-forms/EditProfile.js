@@ -70,7 +70,7 @@ const EditProfile = ({
 
 	return (
 		<Fragment>
-			<h1 className='large text-primary'>Create Your Profile</h1>
+			<h1 className='large text-primary'>Edit Your Profile</h1>
 			<p className='lead'>
 				<i className='fas fa-user'></i> Let's get some information to make your profile
 				stand out
@@ -78,7 +78,7 @@ const EditProfile = ({
 			<small>* = required field</small>
 			<form onSubmit={(e) => onSubmit(e)} className='form'>
 				<div className='form-group'>
-					<select vlaue={status} onChange={(e) => onChange(e)} name='status'>
+					<select value={status} onChange={(e) => onChange(e)} name='status'>
 						<option value='0'>* Select Professional Status</option>
 						<option value='Developer'>Developer</option>
 						<option value='Junior Developer'>Junior Developer</option>
