@@ -146,7 +146,7 @@ router.get("/user/:user_id", async (req, res) => {
 });
 
 // @route   DELETE api/profile
-// @desc    delete profile, user, & posts
+// @desc    delete profile, user, but leave posts
 // @access  Private
 
 router.delete("/", auth, async (req, res) => {
