@@ -7,7 +7,6 @@ const config = require("config");
 
 const Profile = require("../../models/Profile");
 const User = require("../../models/User");
-const Posts = require("../../models/Posts");
 const { profile } = require("console");
 
 // @route   GET api/profile/me
@@ -152,8 +151,6 @@ router.get("/user/:user_id", async (req, res) => {
 
 router.delete("/", auth, async (req, res) => {
 	try {
-		//remove user posts is commented out because I want posts to remain even after an account is deleted
-		// await Posts.deleteMany({ user: req.user.id });
 		//remove profile
 		await Profile.findOneAndRemove({ user: req.user.id });
 		//remove user
