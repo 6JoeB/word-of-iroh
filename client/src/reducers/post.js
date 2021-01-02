@@ -14,7 +14,7 @@ export default function (state = initialState, action) {
 		case GET_POSTS:
 			return {
 				...state,
-				post: payload,
+				posts: payload,
 				loading: false,
 			};
 		case POST_ERROR:
