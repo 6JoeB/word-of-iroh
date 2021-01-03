@@ -1,0 +1,6 @@
+{
+	"mongoURI": "mongodb+srv://admin:admin@wordofiroh.3f30f.mongodb.net?retryWrites=true&w=majority",
+	"jwtSecret": "supersecrettoken",
+	"githubClientId": "a966530dcf85a46eeaa6",
+	"githubSecret": "d84aa6e04471b675eb764373bff20eabecd031d9"
+}
