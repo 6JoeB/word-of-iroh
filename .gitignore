@@ -104,3 +104,4 @@ dist
 .tern-port
 
 config/default.json
+config/production.json
