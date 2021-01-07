@@ -238,6 +238,7 @@ img {
 /* Forms */
 .form .form-group {
 	margin: 1.2rem 0;
+	padding: 0;
 }
 
 .form .form-text {
@@ -245,9 +246,16 @@ img {
 	margin-top: 0.3rem;
 	color: #888;
 }
+.form .form-placeholder {
+	font-size: 14px;
+	display: flex;
+}
+.form .form-input {
+	border: none;
+}
 
 .form input[type="text"],
-.form input[type="email"],
+.form label,
 .form input[type="password"],
 .form input[type="date"],
 .form select,
@@ -257,6 +265,9 @@ img {
 	padding: 0.4rem;
 	font-size: 1.2rem;
 	border: 1px solid #ccc;
+	margin: 0px;
+	min-height: 0px;
+	min-width: 0px;
 }
 
 .form input[type="submit"],
@@ -535,6 +546,7 @@ button {
 	.profile {
 		grid-template-columns: 1fr;
 		text-align: center;
+		grid-gap: 0;
 	}
 
 	.profile ul {
@@ -545,7 +557,7 @@ button {
 
 	.profile-top img,
 	.profile img {
-		width: 200px;
+		width: 120px;
 		margin: auto;
 	}
 
@@ -574,5 +586,9 @@ button {
 	.post a,
 	.post button {
 		padding: 0.3rem 0.4rem;
+	}
+
+	.hidden-on-mobile {
+		display: none;
 	}
 }

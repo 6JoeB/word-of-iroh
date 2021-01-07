@@ -16,10 +16,12 @@ const ProfileItem = ({
 			<img className='round-img' src={avatar}></img>
 			<div>
 				<h2>{name}</h2>
-				<p>
-					{status} {company && <span> at {company}</span>}
-				</p>
-				<p className='my-1'>{location && <span>{location}</span>}</p>
+				<div className='hidden-on-mobile'>
+					<p>
+						{status} {company && <span> at {company}</span>}
+					</p>
+					<p className='my-1'>{location && <span>{location}</span>}</p>
+				</div>
 				<Link to={`/profile/${_id}`} className='btn btn-primary'>
 					View Profile
 				</Link>

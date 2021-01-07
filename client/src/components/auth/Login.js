@@ -30,16 +30,19 @@ const Login = ({ login, isAuthenticated }) => {
 				<i className='fas fa-user'></i> Sign Into Your Account
 			</p>
 			<form className='form' onSubmit={(e) => onSubmit(e)}>
-				<div className='form-group'>
+				<label className='form-group'>
+					<div className='form-placeholder'>
+						<span className='form-placeholder'>email address</span>
+					</div>
 					<input
+						className='form-input'
 						type='email'
-						placeholder='Email Address'
 						name='email'
 						value={email}
 						onChange={(e) => onChange(e)}
 						required
 					/>
-				</div>
+				</label>
 				<div className='form-group'>
 					<input
 						type='password'
