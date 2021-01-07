@@ -11,8 +11,9 @@ const Landing = ({ isAuthenticated }) => {
 		<section className='landing'>
 			<div className='dark-overlay'>
 				<div className='landing-inner'>
+					<h1 className=''>Welcome to</h1>
 					<h1 className='x-large'>Word of Iroh</h1>
-					<p className='lead'>Create a profile, share posts and interact with others</p>
+					<p className='lead'>Join today!</p>
 					<div className='buttons'>
 						<Link to='/register' className='btn btn-primary'>
 							Register
