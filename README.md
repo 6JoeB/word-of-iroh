@@ -1,6 +1,6 @@
 # word-of-iroh 
 
-Forum web app built using the MERN stack
+Social media  web app built using the MERN stack
 
 Sign up to start posting and connecting with the community
 
