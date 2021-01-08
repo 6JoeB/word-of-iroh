@@ -249,15 +249,38 @@ img {
 .form .form-placeholder {
 	font-size: 14px;
 	display: flex;
+	padding-left: 7px;
+	padding-top: 3px;
 }
 .form .form-input {
 	border: none;
+	display: block;
+	width: 100%;
+	padding-right: 0.4rem;
+	padding-left: 0.4rem;
+	padding-bottom: 0.2rem;
+	font-size: 1.2rem;
+	margin: 0px;
+	min-height: 0px;
+	min-width: 0px;
+	background-color: white !important;
+}
+
+.form .form-input:focus {
+	outline: none;
+}
+
+.form .form-input:-webkit-autofill,
+.form .form-input:-webkit-autofill:hover,
+.form .form-input:-webkit-autofill:focus,
+.form .form-input:-webkit-autofill:active {
+	-webkit-box-shadow: 0 0 0 30px white inset !important;
+	filter: none;
 }
 
 .form input[type="text"],
 .form label,
-.form input[type="password"],
-.form input[type="date"],
+.form input .form input[type="date"],
 .form select,
 .form textarea {
 	display: block;

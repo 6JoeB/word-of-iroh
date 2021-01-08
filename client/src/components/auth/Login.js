@@ -25,35 +25,45 @@ const Login = ({ login, isAuthenticated }) => {
 
 	return (
 		<Fragment>
-			<h1 className='large text-primary'>Sign In</h1>
-			<p className='lead'>
-				<i className='fas fa-user'></i> Sign Into Your Account
-			</p>
+			<h1 className='large text-primary'>
+				<i className='fas fa-user'></i> Sign In
+			</h1>
 			<form className='form' onSubmit={(e) => onSubmit(e)}>
+				<div className='test'>
+					<label className='form-group'>
+						<div>
+							<div className='form-placeholder'>
+								<span>Email</span>
+							</div>
+							<div>
+								<input
+									className='form-input'
+									type='email'
+									name='email'
+									value={email}
+									onChange={(e) => onChange(e)}
+									required
+								/>
+							</div>
+						</div>
+					</label>
+				</div>
 				<label className='form-group'>
 					<div className='form-placeholder'>
-						<span className='form-placeholder'>email address</span>
+						<span>Password</span>
 					</div>
-					<input
-						className='form-input'
-						type='email'
-						name='email'
-						value={email}
-						onChange={(e) => onChange(e)}
-						required
-					/>
+					<div>
+						<input
+							className='form-input'
+							type='password'
+							name='password'
+							minLength='6'
+							value={password}
+							onChange={(e) => onChange(e)}
+							required
+						/>
+					</div>
 				</label>
-				<div className='form-group'>
-					<input
-						type='password'
-						placeholder='Password'
-						name='password'
-						minLength='6'
-						value={password}
-						onChange={(e) => onChange(e)}
-						required
-					/>
-				</div>
 				<input type='submit' className='btn btn-primary' value='Login' />
 			</form>
 			<p className='my-1'>
