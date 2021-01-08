@@ -29,25 +29,22 @@ const Login = ({ login, isAuthenticated }) => {
 				<i className='fas fa-user'></i> Sign In
 			</h1>
 			<form className='form' onSubmit={(e) => onSubmit(e)}>
-				<div className='test'>
-					<label className='form-group'>
-						<div>
-							<div className='form-placeholder'>
-								<span>Email</span>
-							</div>
-							<div>
-								<input
-									className='form-input'
-									type='email'
-									name='email'
-									value={email}
-									onChange={(e) => onChange(e)}
-									required
-								/>
-							</div>
-						</div>
-					</label>
-				</div>
+				<label className='form-group'>
+					<div className='form-placeholder'>
+						<span>Email</span>
+					</div>
+					<div>
+						<input
+							className='form-input'
+							type='email'
+							name='email'
+							value={email}
+							onChange={(e) => onChange(e)}
+							required
+						/>
+					</div>
+				</label>
+
 				<label className='form-group'>
 					<div className='form-placeholder'>
 						<span>Password</span>

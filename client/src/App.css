@@ -264,7 +264,7 @@ img {
 	margin: 0px;
 	min-height: 0px;
 	min-width: 0px;
-	background-color: white !important;
+	/* background-color: white !important; */
 }
 
 .form .form-input:focus {
@@ -276,7 +276,6 @@ img {
 .form .form-input:-webkit-autofill:focus,
 .form .form-input:-webkit-autofill:active {
 	-webkit-box-shadow: 0 0 0 30px white inset !important;
-	filter: none;
 }
 
 .form input[type="text"],
