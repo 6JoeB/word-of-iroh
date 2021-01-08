@@ -32,50 +32,70 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 
 	return (
 		<Fragment>
-			<h1 className='large text-primary'>Sign up</h1>
-			<p className='lead'>
-				<i className='fas fa-user'></i> Create Your Account
-			</p>
+			<h1 className='text-primary'>
+				<i className='fas fa-user'></i> Sign up
+			</h1>
 			<form className='form' onSubmit={(e) => onSubmit(e)}>
-				<div className='form-group'>
-					<input
-						type='text'
-						placeholder='Name'
-						name='name'
-						value={name}
-						onChange={(e) => onChange(e)}
-					/>
-				</div>
-				<div className='form-group'>
-					<input
-						type='email'
-						placeholder='Email Address'
-						name='email'
-						value={email}
-						onChange={(e) => onChange(e)}
-					/>
-					<small className='form-text'>
-						This site uses Gravatar so if you want a profile image, use a Gravatar email
-					</small>
-				</div>
-				<div className='form-group'>
-					<input
-						type='password'
-						placeholder='Password'
-						name='password'
-						value={password}
-						onChange={(e) => onChange(e)}
-					/>
-				</div>
-				<div className='form-group'>
-					<input
-						type='password'
-						placeholder='Confirm Password'
-						name='password2'
-						value={password2}
-						onChange={(e) => onChange(e)}
-					/>
-				</div>
+				<label className='form-group'>
+					<div className='form-placeholder'>
+						<span>Name</span>
+					</div>
+					<div>
+						<input
+							className='form-input'
+							type='text'
+							name='name'
+							value={name}
+							onChange={(e) => onChange(e)}
+							required
+						/>
+					</div>
+				</label>
+				<label className='form-group'>
+					<div className='form-placeholder'>
+						<span>Email</span>
+					</div>
+					<div>
+						<input
+							className='form-input'
+							type='email'
+							name='email'
+							value={email}
+							onChange={(e) => onChange(e)}
+						/>
+					</div>
+				</label>
+				<small className='form-text'>
+					This site uses Gravatar so if you want a profile image, use a Gravatar email
+				</small>
+				<label className='form-group'>
+					<div className='form-placeholder'>
+						<span>Password</span>
+					</div>
+					<div>
+						<input
+							className='form-input'
+							type='password'
+							name='password'
+							value={password}
+							onChange={(e) => onChange(e)}
+						/>
+					</div>
+				</label>
+				<label className='form-group'>
+					<div className='form-placeholder'>
+						<span>Confirm Password</span>
+					</div>
+					<div>
+						<input
+							className='form-input'
+							type='password'
+							name='password2'
+							value={password2}
+							onChange={(e) => onChange(e)}
+						/>
+					</div>
+				</label>
 				<input type='submit' className='btn btn-primary' value='Register' />
 			</form>
 			<p className='my-1'>

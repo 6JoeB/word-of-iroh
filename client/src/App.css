@@ -250,8 +250,8 @@ img {
 .form .form-placeholder {
 	font-size: 14px;
 	display: flex;
-	padding-left: 7px;
-	padding-top: 3px;
+	padding-left: 0.4rem;
+	padding-top: 0.23rem;
 }
 .form .form-input {
 	border: none;
@@ -259,7 +259,8 @@ img {
 	width: 100%;
 	padding-right: 0.4rem;
 	padding-left: 0.4rem;
-	padding-bottom: 0.2rem;
+	padding-bottom: 0.4rem;
+	padding-top: 0.1rem;
 	font-size: 1.2rem;
 	margin: 0px;
 	min-height: 0px;
@@ -278,9 +279,11 @@ img {
 	-webkit-box-shadow: 0 0 0 30px white inset !important;
 }
 
-.form input[type="text"],
+/* .form input[type="text"],
+.form input[type="email"],
+.form input[type="password"],
+.form input[type="date"], */
 .form label,
-.form input .form input[type="date"],
 .form select,
 .form textarea {
 	display: block;
@@ -291,6 +294,7 @@ img {
 	margin: 0px;
 	min-height: 0px;
 	min-width: 0px;
+	outline: none !important;
 }
 
 .form input[type="submit"],
