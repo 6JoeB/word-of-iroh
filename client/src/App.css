@@ -229,11 +229,13 @@ img {
 /* Overlay */
 .dark-overlay {
 	background-color: rgba(0, 0, 0, 0.7);
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+	width: 350px;
+	height: 390px;
+	margin: 0 auto;
+	text-align: center;
+	border-radius: 5px;
+	position: relative;
+	top: 30%;
 }
 
 /* Forms */
@@ -373,7 +375,9 @@ button {
 /* Landing Page */
 .landing {
 	position: relative;
-	background: url("./img/showcase.jpg") no-repeat center center/cover;
+	background: url("./img/landscape.jpg") no-repeat center center;
+	background-attachment: fixed;
+	background-size: cover;
 	height: 100vh;
 }
 
@@ -534,6 +538,17 @@ button {
 		margin-top: 8rem;
 	}
 
+	.dark-overlay {
+		background-color: rgba(0, 0, 0, 0.7);
+		width: 275px;
+		height: 305px;
+		margin: 0 auto;
+		text-align: center;
+		border-radius: 5px;
+		position: relative;
+		top: 35%;
+	}
+
 	.hide-sm {
 		display: none;
 	}
@@ -541,6 +556,7 @@ button {
 	/* Text Styles */
 	.x-large {
 		font-size: 3rem;
+		margin-bottom: 0.14rem;
 	}
 
 	.large {
@@ -548,7 +564,7 @@ button {
 	}
 
 	.lead {
-		font-size: 1rem;
+		font-size: 1.2rem;
 	}
 
 	/* Navbar */
