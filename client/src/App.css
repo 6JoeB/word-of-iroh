@@ -1,7 +1,7 @@
 /* Global Styles */
 :root {
 	--primary-colour: #71b6af;
-	--dark-primary-colour: #339396;
+	--dark-primary-colour: #538385;
 	--dark-colour: #343a40;
 	--light-colour: #edf6f9;
 	--danger-colour: #dc3545;
@@ -54,6 +54,12 @@ img {
 
 .large {
 	font-size: 3rem;
+	line-height: 1.2;
+	margin-bottom: 1rem;
+}
+
+.medium {
+	font-size: 2rem;
 	line-height: 1.2;
 	margin-bottom: 1rem;
 }
@@ -560,7 +566,7 @@ button {
 	}
 
 	.large {
-		font-size: 2rem;
+		font-size: 1.7rem;
 	}
 
 	.lead {
