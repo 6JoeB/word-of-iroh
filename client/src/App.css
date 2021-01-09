@@ -133,6 +133,10 @@ img {
 	margin: 3rem 0;
 }
 
+.myb-1 {
+	margin-bottom: 1rem;
+}
+
 .btn {
 	display: inline-block;
 	background: var(--light-colour);
