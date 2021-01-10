@@ -79,7 +79,7 @@ const EditProfile = ({
 			<form onSubmit={(e) => onSubmit(e)} className='form'>
 				<label className='form-group'>
 					<div className='form-placeholder'>
-						<span>Career status</span>
+						<span>Career status *</span>
 					</div>
 					<div>
 						<input
