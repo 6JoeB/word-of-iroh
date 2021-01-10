@@ -136,6 +136,9 @@ img {
 .myb-1 {
 	margin-bottom: 1rem;
 }
+.m-auto {
+	margin: auto;
+}
 
 .btn {
 	display: inline-block;
