@@ -11,8 +11,11 @@ const Experience = ({ experience, deleteExperience }) => {
 				{exp.title} at {exp.company}
 			</h3>
 			<p>
-				<strong>Date: </strong> <Moment format='DD/MM/YYYY'>{exp.from}</Moment> -{" "}
+				<strong> </strong> <Moment format='DD/MM/YYYY'>{exp.from}</Moment> -{" "}
 				{!exp.to ? "Now" : <Moment format='DD/MM/YYYY'>{exp.to}</Moment>}
+			</p>
+			<p>
+				<strong>Location: </strong> {exp.location}
 			</p>
 			<p>
 				<strong>Description: </strong> {exp.description}
@@ -26,7 +29,7 @@ const Experience = ({ experience, deleteExperience }) => {
 	return (
 		<Fragment>
 			<h2 className='my-1'>Experience:</h2>
-			<div>{experiences}</div>
+			{experiences}
 		</Fragment>
 	);
 };
