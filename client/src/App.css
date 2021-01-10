@@ -545,6 +545,13 @@ button {
 	margin-bottom: 0.5rem;
 }
 
+/* Dashboard page */
+.profile-img {
+	width: 100%;
+	max-width: 150px;
+	height: auto;
+}
+
 /* Mobile Styles */
 @media (max-width: 700px) {
 	.container {
@@ -647,5 +654,12 @@ button {
 
 	.hidden-on-mobile {
 		display: none;
+	}
+
+	/* Dashboard page */
+	.profile-img {
+		width: 100%;
+		max-width: 110px;
+		height: auto;
 	}
 }
