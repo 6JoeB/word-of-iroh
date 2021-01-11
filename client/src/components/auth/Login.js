@@ -25,7 +25,7 @@ const Login = ({ login, isAuthenticated }) => {
 
 	return (
 		<Fragment>
-			<h1 className='text-primary'>
+			<h1 className='large text-primary'>
 				<i className='fas fa-user'></i> Sign In
 			</h1>
 			<form className='form' onSubmit={(e) => onSubmit(e)}>
