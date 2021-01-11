@@ -22,8 +22,8 @@ const Dashboard = ({
 		<Spinner />
 	) : (
 		<Fragment>
-			<h1 className='large text-primary'>
-				<i class='fas fa-chalkboard-teacher'></i> Your Dashboard
+			<h1 className='large text-primary '>
+				<i class='fas fa-chalkboard-teacher myb-1'></i> Your Dashboard
 			</h1>
 			<div className='profile-img'>
 				<img className='round-img' src={user.avatar}></img>

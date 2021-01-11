@@ -35,6 +35,14 @@ img {
 	width: 100%;
 }
 
+textarea {
+	height: 90px;
+	font-family: "Raleway", sans-serif;
+}
+
+input {
+	font-family: "Raleway", sans-serif;
+}
 /* Utilities */
 .container {
 	max-width: 1100px;
@@ -580,6 +588,10 @@ button {
 	}
 
 	.large {
+		font-size: 1.7rem;
+	}
+
+	.medium {
 		font-size: 1.7rem;
 	}
 

@@ -149,6 +149,18 @@ const EditProfile = ({
 				</small>
 				<label className='form-group'>
 					<div className='form-placeholder'>
+						<span>A bio about yourself</span>
+					</div>
+					<textarea
+						className='form-input'
+						type='text'
+						name='bio'
+						value={bio}
+						onChange={(e) => onChange(e)}
+					></textarea>
+				</label>
+				<label className='form-group'>
+					<div className='form-placeholder'>
 						<span>Github username</span>
 					</div>
 					<div>
@@ -164,18 +176,6 @@ const EditProfile = ({
 				<small className='form-text'>
 					If you want your latest repos and a Github link, include your username
 				</small>
-				<label className='form-group'>
-					<div className='form-placeholder'>
-						<span>A bio of yourself</span>
-					</div>
-					<textarea
-						className='form-input'
-						type='text'
-						name='bio'
-						value={bio}
-						onChange={(e) => onChange(e)}
-					></textarea>
-				</label>
 
 				<div className='my-2'>
 					<button
