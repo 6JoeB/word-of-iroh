@@ -4,7 +4,7 @@ Social media  web app built using the MERN stack
 
 Sign up to start posting and connecting with the community
 
-Live [here](http://word-of-iroh.herokuapp.com/)🖱️
+Live [here](http://wordofiroh.herokuapp.com)🖱️
 
 ## Tech stack
 
