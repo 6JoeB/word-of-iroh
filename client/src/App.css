@@ -275,6 +275,7 @@ input {
 	display: flex;
 	padding-left: 0.4rem;
 	padding-top: 0.23rem;
+	background-color: white !important;
 }
 .form .form-input {
 	border: none;
@@ -351,8 +352,11 @@ button {
 }
 
 .auth-form {
-	max-width: 45rem;
+	max-width: 50rem;
 	margin: auto;
+	background-color: var(--light-colour);
+	padding: 14px;
+	border-radius: 5px;
 }
 
 .table th,
