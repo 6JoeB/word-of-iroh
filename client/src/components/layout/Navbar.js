@@ -1,10 +1,10 @@
 import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { logout } from "../../actions/auth";
 
-export const Navbar = ({ logout, auth: { isAuthenticated, loading } }) => {
+const Navbar = ({ logout, auth: { isAuthenticated, loading } }) => {
 	const authLinks = (
 		<ul>
 			<li>
@@ -40,11 +40,16 @@ export const Navbar = ({ logout, auth: { isAuthenticated, loading } }) => {
 		</ul>
 	);
 
+	if (useLocation().pathname === "/") {
+		return <Fragment></Fragment>;
+	}
+
 	return (
 		<nav className='navbar bg-dark'>
 			<h1>
-				<i class='far fa-address-book'></i>
-				<Link to='/'>Word of Iroh</Link>
+				<Link to='/'>
+					<i className='fas fa-users'></i> Word of Iroh
+				</Link>
 			</h1>
 			{!loading && <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>}
 		</nav>
