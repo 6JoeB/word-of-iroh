@@ -15,8 +15,8 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
 		<Spinner />
 	) : (
 		<Fragment>
-			<p className='lead'>
-				Welcome to the community, read others post or create your own
+			<p className='lead '>
+				Welcome to the community, read others posts or create your own
 			</p>
 			<PostForm />
 			<div className='posts'>
