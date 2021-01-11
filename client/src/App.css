@@ -350,6 +350,11 @@ button {
 	color: #0077b5;
 }
 
+.auth-form {
+	max-width: 45rem;
+	margin: auto;
+}
+
 .table th,
 .table td {
 	padding: 1rem;
