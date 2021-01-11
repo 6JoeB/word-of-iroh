@@ -132,8 +132,7 @@ const AddExperience = ({ addExperience, history }) => {
 							className='form-input'
 							name='description'
 							cols='30'
-							rows='5'
-							placeholder='Job Description'
+							rows='3'
 							value={description}
 							onChange={(e) => onChange(e)}
 						></textarea>

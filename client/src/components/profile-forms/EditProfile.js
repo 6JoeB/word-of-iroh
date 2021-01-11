@@ -71,7 +71,7 @@ const EditProfile = ({
 	return (
 		<Fragment>
 			<h1 className='large text-primary'>
-				<i class='fas fa-edit'></i> Edit Your Profile
+				<i class='fas fa-user-edit'></i> Edit Your Profile
 			</h1>
 			<p className='lead'>Add or remove information your profile</p>
 			<div className='line'></div>

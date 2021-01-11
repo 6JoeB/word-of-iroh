@@ -43,9 +43,8 @@ export const Navbar = ({ logout, auth: { isAuthenticated, loading } }) => {
 	return (
 		<nav className='navbar bg-dark'>
 			<h1>
-				<Link to='/'>
-					<i className='fas fa-users'></i> Word of Iroh
-				</Link>
+				<i class='far fa-address-book'></i>
+				<Link to='/'>Word of Iroh</Link>
 			</h1>
 			{!loading && <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>}
 		</nav>

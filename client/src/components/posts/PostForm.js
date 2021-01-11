@@ -18,14 +18,14 @@ const PostForm = ({ addPost }) => {
 			>
 				<label className='form-group'>
 					<div className='form-placeholder'>
-						<span>Create a Post</span>
+						<span>Create a post</span>
 					</div>
 					<div>
 						<textarea
 							className='form-input'
 							name='text'
 							cols='30'
-							rows='5'
+							rows='3'
 							minLength='1'
 							value={text}
 							onChange={(e) => setText(e.target.value)}
