@@ -542,11 +542,14 @@ button {
 
 .post > div:first-child {
 	text-align: center;
-	height: 9rem;
 }
 
 .post-header {
-	height: 8rem;
+	height: 7.5rem;
+}
+
+.comment-header {
+	height: 8.5rem;
 }
 
 .post img {
@@ -588,7 +591,7 @@ button {
 		text-align: center;
 		border-radius: 5px;
 		position: relative;
-		top: 24%;
+		top: 23%;
 	}
 
 	.hide-sm {
