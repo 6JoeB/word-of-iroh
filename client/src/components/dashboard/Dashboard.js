@@ -22,20 +22,29 @@ const Dashboard = ({
 		<Spinner />
 	) : (
 		<Fragment>
-			<h1 className='large text-primary'>Dashboard</h1>
-			<p className='lead'>
-				<i className='fas fa-user'></i> Welcome {user && user.name}
-			</p>
+			<h1 className='large text-primary '>
+				<i class='fas fa-chalkboard-teacher myb-1'></i> Your Dashboard
+			</h1>
+			<div className='profile-img'>
+				<img className='round-img' src={user.avatar}></img>
+			</div>
+			<p className='lead'>Welcome {user && user.name}</p>
+
 			{profile !== null ? (
 				<Fragment>
 					<DashboardActions />
+					<div className='line'></div>
 					<Experience experience={profile.experience} />
+					<div className='line'></div>
 					<Education education={profile.education} />
-					<div className='my-2'>
-						<button className='btn btn-danger' onClick={() => deleteAccount()}>
-							<i className='fas fa-user-minus'></i> Delete My Account
-						</button>
-					</div>
+					<div className='line'></div>
+					<Link to={`/profile/${user._id}`} className='my-1 btn btn-light'>
+						<i className='fas fa-mouse text-primary'></i> See How Your Profile Looks to
+						Others
+					</Link>
+					<button className='btn btn-danger' onClick={() => deleteAccount()}>
+						<i className='fas fa-user-minus'></i> Delete Account
+					</button>
 				</Fragment>
 			) : (
 				<Fragment>

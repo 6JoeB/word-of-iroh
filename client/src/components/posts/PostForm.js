@@ -16,16 +16,23 @@ const PostForm = ({ addPost }) => {
 					setText("");
 				}}
 			>
-				<textarea
-					name='text'
-					cols='30'
-					rows='5'
-					placeholder='Write your post here..'
-					value={text}
-					onChange={(e) => setText(e.target.value)}
-					required
-				></textarea>
-				<input type='submit' className='btn btn-dark my-1' value='Submit' />
+				<label className='form-group'>
+					<div className='form-placeholder'>
+						<span>Create a post</span>
+					</div>
+					<div>
+						<textarea
+							className='form-input'
+							name='text'
+							cols='30'
+							rows='3'
+							minLength='1'
+							value={text}
+							onChange={(e) => setText(e.target.value)}
+						></textarea>
+					</div>
+				</label>
+				<input type='submit' className='btn btn-dark myb-1' value='Post' />
 			</form>
 		</div>
 	);

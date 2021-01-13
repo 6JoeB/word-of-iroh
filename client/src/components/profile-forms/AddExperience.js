@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { addExperience } from "../../actions/profile";
@@ -22,52 +22,78 @@ const AddExperience = ({ addExperience, history }) => {
 	const onChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 	return (
 		<Fragment>
-			<h1 class='large text-primary'>Add An Experience</h1>
-			<p class='lead'>
-				<i class='fas fa-code-branch'></i> Add any experience or positions you have had
-			</p>
+			<h1 className='large text-primary'>
+				<i className='fas fa-code-branch'></i> Add An Experience
+			</h1>
+			<p className='lead'>Add any experience or positions you have had</p>
 			<small>* = required field</small>
 			<form
-				class='form'
+				className='form'
 				onSubmit={(e) => {
 					e.preventDefault();
 					addExperience(formData, history);
 				}}
 			>
-				<div class='form-group'>
-					<input
-						type='text'
-						placeholder='* Job Title'
-						name='title'
-						value={title}
-						onChange={(e) => onChange(e)}
-						required
-					/>
-				</div>
-				<div class='form-group'>
-					<input
-						type='text'
-						placeholder='* Company'
-						name='company'
-						value={company}
-						onChange={(e) => onChange(e)}
-						required
-					/>
-				</div>
-				<div class='form-group'>
-					<input
-						type='text'
-						placeholder='Location'
-						name='location'
-						value={location}
-						onChange={(e) => onChange(e)}
-					/>
-				</div>
-				<div class='form-group'>
-					<h4>From Date</h4>
-					<input type='date' name='from' value={from} onChange={(e) => onChange(e)} />
-				</div>
-				<div class='form-group'>
+				<label className='form-group'>
+					<div className='form-placeholder'>
+						<span>Title/Role *</span>
+					</div>
+					<div>
+						<input
+							className='form-input'
+							type='text'
+							name='title'
+							value={title}
+							onChange={(e) => onChange(e)}
+							required
+						></input>
+					</div>
+				</label>
+				<label className='form-group'>
+					<div className='form-placeholder'>
+						<span>Company *</span>
+					</div>
+					<div>
+						<input
+							className='form-input'
+							type='text'
+							name='company'
+							value={company}
+							onChange={(e) => onChange(e)}
+							required
+						></input>
+					</div>
+				</label>
+				<label className='form-group'>
+					<div className='form-placeholder'>
+						<span>Location</span>
+					</div>
+					<div>
+						<input
+							className='form-input'
+							type='text'
+							name='location'
+							value={location}
+							onChange={(e) => onChange(e)}
+							required
+						></input>
+					</div>
+				</label>
+				<label className='form-group'>
+					<div className='form-placeholder'>
+						<span>From Date</span>
+					</div>
+					<div>
+						<input
+							className='form-input'
+							type='date'
+							name='from'
+							value={from}
+							onChange={(e) => onChange(e)}
+						></input>
+					</div>
+				</label>
+				<div className='form-group'>
 					<p>
 						<input
 							type='checkbox'
@@ -79,33 +105,43 @@ const AddExperience = ({ addExperience, history }) => {
 								toggleDisabled(!toDateDisabled);
 							}}
 						/>{" "}
-						Current Job
+						Current
 					</p>
 				</div>
-				<div class='form-group'>
-					<h4>To Date</h4>
-					<input
-						type='date'
-						name='to'
-						value={to}
-						onChange={(e) => onChange(e)}
-						disabled={toDateDisabled ? "disabled" : ""}
-					/>
-				</div>
-				<div class='form-group'>
-					<textarea
-						name='description'
-						cols='30'
-						rows='5'
-						placeholder='Job Description'
-						value={description}
-						onChange={(e) => onChange(e)}
-					></textarea>
-				</div>
-				<input type='submit' class='btn btn-primary my-1' value='Submit' />
-				<a class='btn btn-light my-1' href='dashboard.html'>
+				<label className='form-group'>
+					<div className='form-placeholder'>
+						<span>To Date</span>
+					</div>
+					<div>
+						<input
+							className='form-input'
+							type='date'
+							name='to'
+							value={to}
+							onChange={(e) => onChange(e)}
+							disabled={toDateDisabled ? "disabled" : ""}
+						></input>
+					</div>
+				</label>
+				<label className='form-group'>
+					<div className='form-placeholder'>
+						<span>Description</span>
+					</div>
+					<div>
+						<textarea
+							className='form-input'
+							name='description'
+							cols='30'
+							rows='3'
+							value={description}
+							onChange={(e) => onChange(e)}
+						></textarea>
+					</div>
+				</label>
+				<input type='submit' className='btn btn-primary my-1' value='Submit' />
+				<Link to='/dashboard' className='btn btn-light my-1'>
 					Go Back
-				</a>
+				</Link>
 			</form>
 		</Fragment>
 	);

@@ -31,7 +31,7 @@ const Profile = ({ getProfileById, profile: { profile, loading }, auth, match })
 								Edit Profile
 							</Link>
 						)}
-					<div class='profile-grid my-1'>
+					<div className='profile-grid my-1'>
 						<ProfileTop profile={profile} />
 						<ProfileAbout profile={profile} />
 						<div className='profile-exp bg-white p-2'>
@@ -64,9 +64,9 @@ const Profile = ({ getProfileById, profile: { profile, loading }, auth, match })
 								<h4>No education credentials</h4>
 							)}
 						</div>
-						{profile.githubusername && (
+						{/* {profile.githubusername && (
 							<ProfileGithub username={profile.githubusername} />
-						)}
+						)} */}
 					</div>
 				</Fragment>
 			)}

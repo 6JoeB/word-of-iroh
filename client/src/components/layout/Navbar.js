@@ -1,10 +1,10 @@
 import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { logout } from "../../actions/auth";
 
-export const Navbar = ({ logout, auth: { isAuthenticated, loading } }) => {
+const Navbar = ({ logout, auth: { isAuthenticated, loading } }) => {
 	const authLinks = (
 		<ul>
 			<li>
@@ -39,6 +39,10 @@ export const Navbar = ({ logout, auth: { isAuthenticated, loading } }) => {
 			</li>
 		</ul>
 	);
+
+	if (useLocation().pathname === "/") {
+		return <Fragment></Fragment>;
+	}
 
 	return (
 		<nav className='navbar bg-dark'>
