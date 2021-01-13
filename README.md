@@ -40,6 +40,7 @@ cd frontend
 ```
 npm install
 ```
+config/default.json will need to be populated with a mongoURI, and jwtSecret for full functionality, actual values were removed before pushing to a public git repo for security reasons
 
 Then run the project from the root directory
 ```
