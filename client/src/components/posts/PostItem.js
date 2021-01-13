@@ -57,7 +57,10 @@ const PostItem = ({
 								type='button'
 								className='btn btn-danger'
 							>
-								Delete
+								<span className='hidden-on-desktop'>
+									<i class='fas fa-trash-alt'></i>
+								</span>
+								<span className='hidden-on-mobile'>Delete</span>
 							</button>
 						)}
 					</Fragment>

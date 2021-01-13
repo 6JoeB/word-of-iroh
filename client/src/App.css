@@ -53,6 +53,10 @@ input {
 	margin-bottom: 3rem;
 }
 
+.hidden-on-desktop {
+	display: none;
+}
+
 /* Text Styles*/
 .x-large {
 	font-size: 4rem;
@@ -303,10 +307,6 @@ input {
 	-webkit-box-shadow: 0 0 0 30px white inset !important;
 }
 
-/* .form input[type="text"],
-.form input[type="email"],
-.form input[type="password"],
-.form input[type="date"], */
 .form label,
 .form select,
 .form textarea {
@@ -581,6 +581,10 @@ button {
 @media (max-width: 700px) {
 	.container {
 		margin-top: 8rem;
+	}
+
+	.hidden-on-desktop {
+		display: initial;
 	}
 
 	.dark-overlay {
