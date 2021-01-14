@@ -75,7 +75,6 @@ const AddExperience = ({ addExperience, history }) => {
 							name='location'
 							value={location}
 							onChange={(e) => onChange(e)}
-							required
 						></input>
 					</div>
 				</label>

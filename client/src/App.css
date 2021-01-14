@@ -548,6 +548,13 @@ button {
 	height: 7.5rem;
 }
 
+.comment-text,
+.post-text {
+	word-wrap: break-word;
+	width: 45vw;
+	display: block;
+}
+
 .comment-header {
 	height: 8.5rem;
 }
@@ -690,6 +697,13 @@ button {
 	.post a,
 	.post button {
 		padding: 0.3rem 0.4rem;
+	}
+
+	.comment-text,
+	.post-text {
+		word-wrap: break-word;
+		width: 75vw;
+		display: block;
 	}
 
 	.hidden-on-mobile {
