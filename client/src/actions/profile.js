@@ -11,7 +11,6 @@ import {
 	GET_REPOS,
 } from "./types";
 
-// get current users profile
 export const getCurrentProfile = () => async (dispatch) => {
 	try {
 		const res = await axios.get("/api/profile/me");
@@ -28,7 +27,6 @@ export const getCurrentProfile = () => async (dispatch) => {
 	}
 };
 
-// Get all profiles
 export const getProfiles = () => async (dispatch) => {
 	dispatch({ type: CLEAR_PROFILE });
 	try {
@@ -46,7 +44,6 @@ export const getProfiles = () => async (dispatch) => {
 	}
 };
 
-// Get profile by id
 export const getProfileById = (userId) => async (dispatch) => {
 	try {
 		const res = await axios.get(`/api/profile/user/${userId}`);
@@ -63,7 +60,6 @@ export const getProfileById = (userId) => async (dispatch) => {
 	}
 };
 
-// create or update a profile
 export const createProfile = (formData, history, edit = false) => async (dispatch) => {
 	try {
 		const config = {
@@ -97,7 +93,6 @@ export const createProfile = (formData, history, edit = false) => async (dispatc
 	}
 };
 
-// Add experience
 export const addExperience = (formData, history) => async (dispatch) => {
 	try {
 		const config = {
@@ -160,7 +155,6 @@ export const addEducation = (formData, history) => async (dispatch) => {
 	}
 };
 
-// Delete an experience
 export const deleteExperience = (id) => async (dispatch) => {
 	try {
 		const res = await axios.delete(`/api/profile/experience/${id}`);
@@ -179,7 +173,6 @@ export const deleteExperience = (id) => async (dispatch) => {
 	}
 };
 
-// Delete an education
 export const deleteEducation = (id) => async (dispatch) => {
 	try {
 		const res = await axios.delete(`/api/profile/education/${id}`);
@@ -198,7 +191,6 @@ export const deleteEducation = (id) => async (dispatch) => {
 	}
 };
 
-// Delete account and profile
 export const deleteAccount = () => async (dispatch) => {
 	if (
 		window.confirm(
@@ -221,7 +213,6 @@ export const deleteAccount = () => async (dispatch) => {
 	}
 };
 
-// Get Github repos
 export const getGithubRepos = (username) => async (dispatch) => {
 	try {
 		const res = await axios.get(`/api/profile/github/${username}`);
