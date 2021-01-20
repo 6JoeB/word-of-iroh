@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
@@ -63,6 +63,9 @@ const Login = ({ login, isAuthenticated }) => {
 				</label>
 				<input type='submit' className='btn btn-primary' value='Login' />
 			</form>
+			<p className='my-1'>
+				<Link to='/forgotten-password'>Forgotten your password? </Link>
+			</p>
 			<p className='my-1'>
 				Don't have an account? <Link to='/register'>Sign Up</Link>
 			</p>
