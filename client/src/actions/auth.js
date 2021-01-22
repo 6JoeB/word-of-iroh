@@ -89,3 +89,19 @@ export const logout = () => (dispatch) => {
 	dispatch({ type: CLEAR_PROFILE });
 	dispatch({ type: LOGOUT });
 };
+
+export const forgotPassword = (email) => (dispatch) => {
+	const config = {
+		headers: {
+			"Content-Type": "application/json",
+		},
+	};
+
+	const body = JSON.stringify({ email });
+	console.log(body);
+	try {
+		axios.post("api/users/password-reset-email", body, config);
+	} catch (err) {
+		console.log(err);
+	}
+};

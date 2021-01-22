@@ -1,12 +1,19 @@
+import { connect } from "react-redux";
 import React, { useState } from "react";
+import { forgotPassword } from "../../actions/auth";
+import PropTypes from "prop-types";
 
-const ForgottenPassword = () => {
+const ForgottenPassword = ({ forgotPassword }) => {
 	const [email, setEmail] = useState("");
 	const [emailSent, toggleEmailSent] = useState(false);
 
 	const onChange = (e) => setEmail(e.target.value);
 
-	const onSubmit = () => toggleEmailSent(true);
+	const onSubmit = () => {
+		console.log(email);
+		forgotPassword(email);
+		toggleEmailSent(true);
+	};
 
 	const emailForm = (
 		<div className='auth-form'>
@@ -29,7 +36,7 @@ const ForgottenPassword = () => {
 						/>
 					</div>
 				</label>
-				<input type='submit' className='btn btn-primary' value='Submit' />
+				<input type='submit' className='btn btn-primary' value='Send' />
 			</form>
 		</div>
 	);
@@ -43,4 +50,8 @@ const ForgottenPassword = () => {
 	return !emailSent ? emailForm : passwordResetSent;
 };
 
-export default ForgottenPassword;
+ForgottenPassword.propTypes = {
+	forgotPassword: PropTypes.func.isRequired,
+};
+
+export default connect(null, { forgotPassword })(ForgottenPassword);

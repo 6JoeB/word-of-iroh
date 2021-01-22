@@ -83,10 +83,9 @@ router.post(
 // @route   get api/users/password-reset-email
 // @desc    check if a user exists and send them a reset password email
 // @access  Public
-router.get("/password-reset-email", async (req, res) => {
-	const email = req.body.email.toLowerCase();
-
+router.post("/password-reset-email", async (req, res) => {
 	try {
+		const email = req.body.email.toLowerCase();
 		let user = await User.findOne({ email });
 
 		if (!user) {
@@ -103,11 +102,15 @@ router.get("/password-reset-email", async (req, res) => {
 		});
 
 		var mailOptions = {
-			from: '"Team at Word Of Iroh" <WordOfIroh@gmail.com>',
-			to: "",
-			subject: "Nice Nodemailer test",
-			text: "Hey there, it’s our first message sent with Nodemailer",
-			html: "<b>Hey there! </b><br> This is our first message sent with Nodemailer",
+			from: '"Team at Word of Iroh" <WordofIroh@gmail.com>',
+			to: email,
+			subject: "Password reset link",
+			text: "Reset your Word of Iroh password",
+			html: `<b> Hey there! </b> <br>
+			Looks like someone requested to reset your account password! <br> 
+			<a href="http://localhost:3000" target="_blank">Click here to reset your password.</a> <br><br>
+			If it was not you then you can safely ignore this email. <br>
+			<i>From the team at Word of Iroh</i>`,
 		};
 
 		transport.sendMail(mailOptions, (error, info) => {
@@ -117,7 +120,7 @@ router.get("/password-reset-email", async (req, res) => {
 			console.log("Message sent: %s", info.messageId);
 		});
 
-		return res.status(200).send("Message sent");
+		return res.status(200).send(`Message sent to ${email}`);
 	} catch (err) {
 		console.error(err.message);
 		res.status(500).send("Server error");
