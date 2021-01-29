@@ -4,7 +4,7 @@ Social media web app built using the MERN stack
 
 Sign up to start posting and connecting with the community
 
-Live [here](http://wordofiroh.herokuapp.com)🖱️
+Live [here](https://wordofiroh.herokuapp.com)🖱️
 
 Initial loading times may vary, Heroku unloads apps from server memory if they are not frequently visited so as to save server resources
 
