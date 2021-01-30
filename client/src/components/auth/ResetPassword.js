@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { setAlert } from "../../actions/alert";
 import PropTypes from "prop-types";
+import { Redirect } from "react-router-dom";
 
 const ResetPassword = ({ setAlert }) => {
 	const [formData, setFormData] = useState({
@@ -9,18 +10,24 @@ const ResetPassword = ({ setAlert }) => {
 		confirmPassword: "",
 	});
 
+	const [redirect, setRedirect] = useState(false);
+
 	const { newPassword, confirmPassword } = formData;
 
 	const onChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
 	const onSubmit = async (e) => {
 		e.preventDefault();
-		if (newPassword != confirmPassword) {
-			setAlert("Passwords do not match", "danger");
-			console.log("passwords do not match");
+		if (newPassword === confirmPassword) {
+			setAlert("Password changed successfuly", "success");
+			setRedirect(true);
 		}
-		console.log(newPassword + confirmPassword);
+		setAlert("Passwords do not match", "danger");
 	};
+
+	if (redirect) {
+		return <Redirect to='/login' />;
+	}
 
 	return (
 		<div className='auth-form'>
