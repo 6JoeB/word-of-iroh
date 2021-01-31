@@ -3,8 +3,9 @@ import { connect } from "react-redux";
 import { setAlert } from "../../actions/alert";
 import PropTypes from "prop-types";
 import { Redirect } from "react-router-dom";
+import { updatePassword } from "../../actions/auth";
 
-const UpdatePassword = ({ setAlert }) => {
+const UpdatePassword = ({ setAlert, updatePassword, match }) => {
 	const [formData, setFormData] = useState({
 		newPassword: "",
 		confirmPassword: "",
@@ -19,10 +20,18 @@ const UpdatePassword = ({ setAlert }) => {
 	const onSubmit = async (e) => {
 		e.preventDefault();
 		if (newPassword === confirmPassword) {
-			setAlert("Password changed successfuly", "success");
-			setRedirect(true);
+			try {
+				updatePassword(match.params.user_id, newPassword);
+				setAlert("Password changed successfuly", "success");
+				console.log(match.params.user_id);
+				setRedirect(true);
+			} catch (err) {
+				console.log(err);
+				setAlert("Password not changed, please try again", "danger");
+			}
+		} else {
+			setAlert("Passwords do not match", "danger");
 		}
-		setAlert("Passwords do not match", "danger");
 	};
 
 	if (redirect) {
@@ -74,6 +83,7 @@ const UpdatePassword = ({ setAlert }) => {
 
 UpdatePassword.propTypes = {
 	setAlert: PropTypes.func.isRequired,
+	updatePassword: PropTypes.func.isRequired,
 };
 
-export default connect(null, { setAlert })(UpdatePassword);
+export default connect(null, { setAlert, updatePassword })(UpdatePassword);

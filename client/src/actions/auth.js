@@ -105,3 +105,20 @@ export const forgotPassword = (email) => (dispatch) => {
 		console.log(err);
 	}
 };
+
+export const updatePassword = (user_id, password) => (dispatch) => {
+	const config = {
+		headers: {
+			"Content-Type": "application/json",
+		},
+	};
+	const body = JSON.stringify({ password });
+
+	try {
+		const res = axios.put(`api/auth/update-password/${user_id}`, body, config);
+		console.log(res);
+		console.log(user_id);
+	} catch (err) {
+		console.log(err);
+	}
+};

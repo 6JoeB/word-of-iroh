@@ -88,7 +88,7 @@ router.post("/password-reset-email", async (req, res) => {
 		const email = req.body.email.toLowerCase();
 		let user = await User.findOne({ email });
 
-		let userId = user._id;
+		let user_id = user._id;
 
 		if (!user) {
 			return res.status(400).json({ errors: [{ msg: "Invalid email" }] });
@@ -111,11 +111,11 @@ router.post("/password-reset-email", async (req, res) => {
 			html: `<b> Hey there! </b> <br>
 			Looks like someone requested to reset your account password! <br>
 			If it was not you then you can safely ignore this email. <br>
-			<a href="http://localhost:3000/update-password" target="_blank">Click here to reset your password.</a> <br><br>
+			<a href="http://localhost:3000/update-password/${user_id}" target="_blank">Click here to reset your password.</a> <br><br>
 			<i>From the team at Word of Iroh</i>`,
 		};
 
-		token = crypto.randomBytes(32).toString("hex");
+		// token = crypto.randomBytes(32).toString("hex");
 
 		transport.sendMail(mailOptions, (error, info) => {
 			if (error) {
