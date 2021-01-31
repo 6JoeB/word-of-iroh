@@ -75,4 +75,41 @@ router.post(
 	}
 );
 
+// @route   get api/auth/update-password/:user_id
+// @desc    Update a users password
+// @access  Public
+router.put(
+	"/update-password/:user_id",
+	[
+		check("newPassword", "New password is required").exists(),
+		check("confirmPassword", "Confirm password is required").exists(),
+	],
+	async (req, res) => {
+		const errors = validationResult(req);
+		if (!errors.isEmpty()) {
+			return res.status(400).json({ errors: errors.array() });
+		}
+		const { newPassword, confirmPassword } = req.body;
+
+		try {
+			let user = await User.findById(req.params.user_id);
+
+			if (!user) {
+				return res.status(400).json({ msg: "User not found", user: req.params.user_id });
+			}
+
+			const salt = await bcrypt.genSalt(10);
+
+			user.password = await bcrypt.hash(newPassword, salt);
+
+			await user.save();
+
+			return res.status(200).json({ msg: "User password updated" });
+		} catch (err) {
+			console.error(err.message);
+			res.status(500).send("Server error");
+		}
+	}
+);
+
 module.exports = router;
