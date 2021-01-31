@@ -4,7 +4,7 @@ import { setAlert } from "../../actions/alert";
 import PropTypes from "prop-types";
 import { Redirect } from "react-router-dom";
 
-const ResetPassword = ({ setAlert }) => {
+const UpdatePassword = ({ setAlert }) => {
 	const [formData, setFormData] = useState({
 		newPassword: "",
 		confirmPassword: "",
@@ -72,8 +72,8 @@ const ResetPassword = ({ setAlert }) => {
 	);
 };
 
-ResetPassword.propTypes = {
+UpdatePassword.propTypes = {
 	setAlert: PropTypes.func.isRequired,
 };
 
-export default connect(null, { setAlert })(ResetPassword);
+export default connect(null, { setAlert })(UpdatePassword);

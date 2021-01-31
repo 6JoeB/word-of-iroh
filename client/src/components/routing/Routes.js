@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Register from "../auth/Register";
 import Login from "../auth/Login";
 import ForgottenPassword from "../auth/ForgottenPassword";
-import ResetPassword from "../auth/ResetPassword";
+import UpdatePassword from "../auth/UpdatePassword";
 import Alert from "../layout/Alert";
 import Dashboard from "../dashboard/Dashboard";
 import CreateProfile from "../profile-forms/CreateProfile";
@@ -25,7 +25,7 @@ const Routes = () => {
 				<Route exact path='/register' component={Register} />
 				<Route exact path='/login' component={Login} />
 				<Route exact path='/forgotten-password' component={ForgottenPassword} />
-				<Route exact path='/reset-password' component={ResetPassword} />
+				<Route exact path='/update-password' component={UpdatePassword} />
 				<Route exact path='/profiles' component={Profiles} />
 				<Route exact path='/profile/:id' component={Profile} />
 				<PrivateRoute exact path='/dashboard' component={Dashboard} />

@@ -6,8 +6,8 @@ const jwt = require("jsonwebtoken");
 const config = require("config");
 const { check, validationResult } = require("express-validator");
 const nodemailer = require("nodemailer");
-const resetPasswordEmailPassword = config.get("resetPasswordEmailPassword");
-const resetPasswordEmail = config.get("resetPasswordEmail");
+const updatePasswordEmailPassword = config.get("updatePasswordEmailPassword");
+const updatePasswordEmail = config.get("updatePasswordEmail");
 
 const User = require("../../models/User");
 // @route   POST api/users
@@ -88,6 +88,8 @@ router.post("/password-reset-email", async (req, res) => {
 		const email = req.body.email.toLowerCase();
 		let user = await User.findOne({ email });
 
+		let userId = user._id;
+
 		if (!user) {
 			return res.status(400).json({ errors: [{ msg: "Invalid email" }] });
 		}
@@ -96,8 +98,8 @@ router.post("/password-reset-email", async (req, res) => {
 		var transport = nodemailer.createTransport({
 			service: "Gmail",
 			auth: {
-				user: resetPasswordEmail,
-				pass: resetPasswordEmailPassword,
+				user: updatePasswordEmail,
+				pass: updatePasswordEmailPassword,
 			},
 		});
 
@@ -109,7 +111,7 @@ router.post("/password-reset-email", async (req, res) => {
 			html: `<b> Hey there! </b> <br>
 			Looks like someone requested to reset your account password! <br>
 			If it was not you then you can safely ignore this email. <br>
-			<a href="http://localhost:3000/reset-password" target="_blank">Click here to reset your password.</a> <br><br>
+			<a href="http://localhost:3000/update-password" target="_blank">Click here to reset your password.</a> <br><br>
 			<i>From the team at Word of Iroh</i>`,
 		};
 
