@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import React, { useState } from "react";
-import { forgotPassword } from "../../actions/auth";
+import { forgotPassword } from "../../api/index";
 import PropTypes from "prop-types";
 
 const ForgottenPassword = ({ forgotPassword }) => {

@@ -6,13 +6,13 @@ const PasswordResetTokenSchema = new Schema({
 		type: String,
 		required: true,
 	},
+	userId: {
+		type: Schema.Types.ObjectId,
+		required: true,
+	},
 	validTill: {
 		type: Date,
 		default: () => new Date(+new Date() + 20 * 60 * 1000),
-	},
-	user: {
-		type: Schema.Types.ObjectId,
-		ref: "users",
 	},
 });
 

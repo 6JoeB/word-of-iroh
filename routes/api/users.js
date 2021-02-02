@@ -3,13 +3,15 @@ const router = express.Router();
 const gravatar = require("gravatar");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const Crypto = require("crypto");
 const config = require("config");
 const { check, validationResult } = require("express-validator");
 const nodemailer = require("nodemailer");
 const updatePasswordEmailPassword = config.get("updatePasswordEmailPassword");
 const updatePasswordEmail = config.get("updatePasswordEmail");
-
 const User = require("../../models/User");
+const PasswordResetToken = require("../../models/PasswordResetToken");
+
 // @route   POST api/users
 // @desc    register user
 // @access  Public
@@ -88,12 +90,11 @@ router.post("/password-reset-email", async (req, res) => {
 		const email = req.body.email.toLowerCase();
 		let user = await User.findOne({ email });
 
-		let user_id = user._id;
-
 		if (!user) {
 			return res.status(400).json({ errors: [{ msg: "Invalid email" }] });
 		}
 
+		const userId = user._id;
 		// Send password reset email
 		var transport = nodemailer.createTransport({
 			service: "Gmail",
@@ -111,11 +112,9 @@ router.post("/password-reset-email", async (req, res) => {
 			html: `<b> Hey there! </b> <br>
 			Looks like someone requested to reset your account password! <br>
 			If it was not you then you can safely ignore this email. <br>
-			<a href="http://localhost:3000/update-password/${user_id}" target="_blank">Click here to reset your password.</a> <br><br>
+			<a href="http://localhost:3000/update-password/${userId}" target="_blank">Click here to reset your password.</a> <br><br>
 			<i>From the team at Word of Iroh</i>`,
 		};
-
-		// token = crypto.randomBytes(32).toString("hex");
 
 		transport.sendMail(mailOptions, (error, info) => {
 			if (error) {
@@ -123,6 +122,12 @@ router.post("/password-reset-email", async (req, res) => {
 			}
 			console.log("Message sent: %s", info.messageId);
 		});
+
+		let token = Crypto.randomBytes(16).toString("hex");
+
+		let passwordResetToken = new PasswordResetToken({ token, userId });
+
+		await passwordResetToken.save();
 
 		return res.status(200).send(`Message sent to ${email}`);
 	} catch (err) {
