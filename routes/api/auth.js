@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const auth = require("../../middleware/auth");
 const User = require("../../models/User");
+const PasswordResetToken = require("../../models/PasswordResetToken");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const config = require("config");
@@ -108,5 +109,22 @@ router.put(
 		}
 	}
 );
+
+// @route   get api/auth/password-reset-token/:user_id
+// @desc    Get a users password reset token
+// @access  Public
+
+router.get("/password-reset-token/:user_id", async (req, res) => {
+	try {
+		const userId = req.params.user_id;
+		const passwordResetTokens = await PasswordResetToken.find({ userId }).sort({
+			validTill: -1,
+		});
+		return res.status(200).json(passwordResetTokens);
+	} catch (err) {
+		console.error(err.message);
+		return res.status(500).send("Server error");
+	}
+});
 
 module.exports = router;

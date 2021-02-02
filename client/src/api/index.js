@@ -32,9 +32,20 @@ export const updatePassword = (user_id, password) => (dispatch) => {
 	}
 };
 
+export const getPasswordResetToken = (user_id) => (dispatch) => {
+	try {
+		console.log("trying to send req");
+		const res = axios.get(`api/auth/password-reset-token/${user_id}`);
+		console.log(res);
+	} catch (err) {
+		console.log(err);
+	}
+};
+
 const apis = {
 	forgotPassword,
 	updatePassword,
+	getPasswordResetToken,
 };
 
 export default apis;

@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { setAlert } from "../../actions/alert";
 import PropTypes from "prop-types";
 import { Redirect } from "react-router-dom";
-import { updatePassword } from "../../api/index";
+import { updatePassword, getPasswordResetToken } from "../../api/index";
 
 const UpdatePassword = ({ setAlert, updatePassword, match }) => {
 	const [formData, setFormData] = useState({
