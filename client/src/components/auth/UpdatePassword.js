@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { connect } from "react-redux";
-import { setAlert } from "../../actions/alert";
-import PropTypes from "prop-types";
 import { Redirect } from "react-router-dom";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { setAlert } from "../../actions/alert";
 import { updatePassword, getPasswordResetToken } from "../../api/index";
+import axios from "axios";
 
-const UpdatePassword = ({ setAlert, updatePassword, match }) => {
+const UpdatePassword = ({ setAlert, match }) => {
 	const [formData, setFormData] = useState({
 		newPassword: "",
 		confirmPassword: "",
@@ -34,6 +35,13 @@ const UpdatePassword = ({ setAlert, updatePassword, match }) => {
 		}
 	};
 
+	const test = async (e) => {
+		e.preventDefault();
+		const res = await axios.get(`api/auth/password-reset-token/5fec962aabc5c20640dc309f`);
+		console.log(res);
+		//getPasswordResetToken(match.params.user_id);
+	};
+
 	if (redirect) {
 		return <Redirect to='/login' />;
 	}
@@ -41,6 +49,7 @@ const UpdatePassword = ({ setAlert, updatePassword, match }) => {
 	return (
 		<div className='auth-form'>
 			<h1 className='medium text-primary'>Please enter a new password</h1>
+			<button onClick={(e) => test(e)}>test me</button>
 			<form className='form' onSubmit={(e) => onSubmit(e)}>
 				<label className='form-group'>
 					<div className='form-placeholder'>
@@ -83,7 +92,6 @@ const UpdatePassword = ({ setAlert, updatePassword, match }) => {
 
 UpdatePassword.propTypes = {
 	setAlert: PropTypes.func.isRequired,
-	updatePassword: PropTypes.func.isRequired,
 };
 
-export default connect(null, { setAlert, updatePassword })(UpdatePassword);
+export default connect(null, { setAlert })(UpdatePassword);
