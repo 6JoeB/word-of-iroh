@@ -8,7 +8,6 @@ export const forgotPassword = (email) => (dispatch) => {
 	};
 
 	const body = JSON.stringify({ email });
-	console.log(body);
 	try {
 		axios.post("api/users/password-reset-email", body, config);
 	} catch (err) {
@@ -16,7 +15,7 @@ export const forgotPassword = (email) => (dispatch) => {
 	}
 };
 
-export const updatePassword = (user_id, password) => (dispatch) => {
+export const updatePassword = async (user_id, password) => {
 	const config = {
 		headers: {
 			"Content-Type": "application/json",
@@ -25,8 +24,7 @@ export const updatePassword = (user_id, password) => (dispatch) => {
 	const body = JSON.stringify({ password });
 
 	try {
-		const res = axios.put(`api/auth/update-password/${user_id}`, body, config);
-		console.log(res);
+		const res = await axios.put(`api/auth/update-password/${user_id}`, body, config);
 	} catch (err) {
 		console.log(err);
 	}

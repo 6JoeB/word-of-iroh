@@ -10,7 +10,6 @@ const ForgottenPassword = ({ forgotPassword }) => {
 	const onChange = (e) => setEmail(e.target.value);
 
 	const onSubmit = () => {
-		console.log(email);
 		forgotPassword(email);
 		toggleEmailSent(true);
 	};

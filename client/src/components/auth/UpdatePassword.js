@@ -24,7 +24,6 @@ const UpdatePassword = ({ setAlert, match }) => {
 			try {
 				updatePassword(match.params.user_id, newPassword);
 				setAlert("Password changed successfuly", "success");
-				console.log(match.params.user_id);
 				setRedirect(true);
 			} catch (err) {
 				console.log(err);
@@ -35,13 +34,6 @@ const UpdatePassword = ({ setAlert, match }) => {
 		}
 	};
 
-	const test = async (e) => {
-		e.preventDefault();
-		const res = await axios.get(`api/auth/password-reset-token/5fec962aabc5c20640dc309f`);
-		console.log(res);
-		//getPasswordResetToken(match.params.user_id);
-	};
-
 	if (redirect) {
 		return <Redirect to='/login' />;
 	}
@@ -49,7 +41,6 @@ const UpdatePassword = ({ setAlert, match }) => {
 	return (
 		<div className='auth-form'>
 			<h1 className='medium text-primary'>Please enter a new password</h1>
-			<button onClick={(e) => test(e)}>test me</button>
 			<form className='form' onSubmit={(e) => onSubmit(e)}>
 				<label className='form-group'>
 					<div className='form-placeholder'>

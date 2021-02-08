@@ -120,7 +120,7 @@ router.get("/password-reset-token/:user_id", async (req, res) => {
 		const passwordResetTokens = await PasswordResetToken.find({ userId }).sort({
 			validTill: -1,
 		});
-		return res.status(200).json(passwordResetTokens);
+		return res.status(200).json(passwordResetTokens[0]);
 	} catch (err) {
 		console.error(err.message);
 		return res.status(500).send("Server error");
