@@ -26,7 +26,7 @@ const Dashboard = ({
 				<i class='fas fa-chalkboard-teacher myb-1'></i> Your Dashboard
 			</h1>
 			<div className='profile-img'>
-				<img className='round-img' src={user.avatar}></img>
+				<img className='round-img' src={user.avatar} alt='User profile'></img>
 			</div>
 			<p className='lead'>Welcome {user && user.name}</p>
 

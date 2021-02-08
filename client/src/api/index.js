@@ -24,7 +24,7 @@ export const updatePassword = async (user_id, password) => {
 	const body = JSON.stringify({ password });
 
 	try {
-		const res = await axios.put(`api/auth/update-password/${user_id}`, body, config);
+		await axios.put(`api/auth/update-password/${user_id}`, body, config);
 	} catch (err) {
 		console.log(err);
 	}

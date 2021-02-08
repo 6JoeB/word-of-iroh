@@ -15,7 +15,7 @@ const initialState = {
 	error: {},
 };
 
-export default function (state = initialState, aciton) {
+export default function profile(state = initialState, aciton) {
 	const { type, payload } = aciton;
 	switch (type) {
 		case GET_PROFILE:
